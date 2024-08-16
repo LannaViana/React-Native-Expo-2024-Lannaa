@@ -1,19 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { useAuth } from '../hooks/Auth';
+import { router } from 'expo-router';
 
 export default function App() {
   const { singIn, singOut } = useAuth();
+
+  const handleEntrarSuper = async () => {
+    try {
+      await singIn({email: "super@email.com", password: "Super123!"});
+      router.replace("/");
+    } catch (error) {
+      console.log(e)
+    }
+  }
 
   return (
     <View style={styles.container}>
       <Text style={styles.tittle}>Aplicativo pronto para usar</Text>
       <Button
        title="Singin Super" 
-       onPress={()=>
-       singIn({email: "super@email.com", password: "Super123!"})
-       } 
-       />
+       onPress={handleEntrarSuper} />
        <Button
        title="Singin Adm" 
        onPress={()=>
