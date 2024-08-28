@@ -4,8 +4,10 @@ import { useAuth } from "../hooks/Auth";
 import { useEffect } from "react";
 import { ScreenStackHeaderRightView } from "react-native-screens";
 
-export default function Layout () {
- const { user } = useAuth();
+
+const StackLayout = () => {
+
+  const { user } = useAuth();
  const segments = useSegments();
 
  useEffect(() => {
@@ -21,11 +23,19 @@ export default function Layout () {
  }, [user]);
 
   return( 
+<Stack>
+  <Stack.Screen name="index" options={{headerShown: false }} />
+  <Stack.Screen name="(protected)" options={{headerShown: false }} />
+</Stack>
+  );
+};
+
+export default function Layout () {
+
+
+  return( 
   <AppProvider>
-    <Stack>
-      <Stack.Screen name="index" />
-      <Stack.Screen name="(protected)" />
-    </Stack>
+      <StackLayout />
     </AppProvider>
     ); 
 }
