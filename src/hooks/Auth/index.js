@@ -44,7 +44,7 @@ export function AuthProvider({ children }) {
   }
 };
 
-   const singOut = async () => {
+   const signOut = async () => {
     setUser({}); 
    };
    
@@ -53,11 +53,12 @@ export function AuthProvider({ children }) {
    }, [user])
 
    return (
-   <AuthContext.Provider value={{ user, singIn, singOut }}>
+   <AuthContext.Provider value={{ user, singIn, signOut }}>
      {children} 
      </AuthContext.Provider>
    );
 }
+
 
 export function useAuth() {
     const context = useContext(AuthContext);

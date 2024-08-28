@@ -3,13 +3,13 @@ import { useAuth } from "../../hooks/Auth";
 
 
 export default function Home() {
-    const { singOut } = useAuth();
+    const { signOut } = useAuth();
 
 
     return(
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Text>Home</Text>
-            <Button title="Sair" onPress={() => singOut()} />
+            <Button title="Sair" onPress={() => signOut()} />
         </View>
     );
 }
