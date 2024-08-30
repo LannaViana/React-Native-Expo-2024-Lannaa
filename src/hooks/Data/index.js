@@ -1,5 +1,5 @@
 import { SQLiteProvider } from "expo-sqlite"
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { initializeDatabase } from "../../database/initializeDatabase";
 
 const DataContext = createContext({})
