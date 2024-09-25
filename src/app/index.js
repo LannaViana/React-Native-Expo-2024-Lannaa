@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function App() {
   const { singIn, signOut } = useAuth();
-  const [email, setEmail] = useState("super@email.com");
+  const [email, setEmail] = useState("Super@email.com");
   const [password, setPassword] = useState("A123456a!");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
 
@@ -17,7 +17,7 @@ export default function App() {
 
   const handleEntrarSuper = async () => {
     try {
-      await singIn({ email: "super@email.com", password: "A123456a!" });
+      await singIn({ email, password });
       router.replace("/");
     } catch (error) {
       console.log(error);
@@ -53,7 +53,11 @@ export default function App() {
           />
       </View>
       
-      <Button title="Entrar" onPress={handleEntrarSuper} />
+      <Button 
+      style={styles.button} 
+      title="Entrar" 
+      onPress={handleEntrarSuper} 
+      />
       
       <Button title="Sobre" onPress={()=>router.push("/about")} />
         <Button title="Sair do Aplicativo" onPress={() => BackHandler.exitApp()} />
@@ -86,4 +90,7 @@ const styles = StyleSheet.create({
     fontFamily: "regular",
     fontSize: 20,
   },
+  button: {
+    flex: 1,
+  }
 });

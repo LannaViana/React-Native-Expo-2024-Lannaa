@@ -1,7 +1,7 @@
 export async function initializeDatabase(database) {
 
 try {
-  await database.exceAsync(`
+  await database.execAsync(`
     DROP TABLE IF EXISTS users;
     
     CREATE TABLE IF NOT EXISTS users (
@@ -21,5 +21,4 @@ try {
   } catch (error) {
     console.log(error);
   }
-
 }
