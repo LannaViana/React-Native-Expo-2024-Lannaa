@@ -29,6 +29,8 @@ export function AuthProvider({ children }) {
      });
     }
 
+    console.log(response);
+
     setUser({
       autenticated: true,
       user: response,

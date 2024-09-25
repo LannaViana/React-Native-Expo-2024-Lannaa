@@ -3,7 +3,7 @@ import { Drawer } from 'expo-router/drawer';
 
 const DrawerLayout = () => {
     return (
-        <GestureHandlerRootView style={{ flex: 1 }}>
+        <GestureHandlerRootView style={{ flex: 1, backgroundColor: "#785a26",}}>
             <Drawer />
         </GestureHandlerRootView>
     );

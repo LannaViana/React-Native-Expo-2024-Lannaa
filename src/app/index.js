@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { BackHandler, Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { Alert, BackHandler, Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { useAuth } from "../hooks/Auth";
 import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function App() {
   const { singIn, signOut } = useAuth();
-  const [email, setEmail] = useState("Super@email.com");
+  const [email, setEmail] = useState("super@email.com");
   const [password, setPassword] = useState("A123456a!");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
 
@@ -20,6 +20,7 @@ export default function App() {
       await singIn({ email, password });
       router.replace("/");
     } catch (error) {
+      Alert.alert("Erro", error.message);
       console.log(error);
     }
   };
@@ -54,13 +55,13 @@ export default function App() {
       </View>
       
       <Button 
-      style={styles.button} 
+      color="#3f5e31"
       title="Entrar" 
       onPress={handleEntrarSuper} 
       />
       
-      <Button title="Sobre" onPress={()=>router.push("/about")} />
-        <Button title="Sair do Aplicativo" onPress={() => BackHandler.exitApp()} />
+      <Button color="#3f5e31" title="Sobre" onPress={()=>router.push("/about")} />
+        <Button color="#bf3945" title="Sair do Aplicativo" onPress={() => BackHandler.exitApp()} />
       <StatusBar style="auto" />
     </View>
   );
@@ -69,7 +70,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#f5ca84",
     alignItems: "center",
     justifyContent: "center",
     gap: 15,
@@ -92,5 +93,6 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
+    
   }
 });
