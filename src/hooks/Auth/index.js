@@ -42,9 +42,6 @@ export function AuthProvider({ children }) {
    LoadStoragedData();
   },[]);
 
-  useEffect(()=>{
-    console.log("AuthProvider: ", user);
-  },[user])
 
    const singIn = async ({email, password}) => {
     const response = await authUser({ email, password });
@@ -74,9 +71,6 @@ export function AuthProvider({ children }) {
     setUser({}); 
    };
    
-   useEffect(() => {
-    console.log('AuthProvider:', user)
-   }, [user]);
 
    if (user?.autenticated === null) {
     return ( 
