@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function App() {
   const { singIn, signOut } = useAuth();
-  const [email, setEmail] = useState("super@email.com");
+  const [email, setEmail] = useState("Super@email.com");
   const [password, setPassword] = useState("A123456a!");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
 
