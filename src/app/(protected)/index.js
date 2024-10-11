@@ -10,7 +10,6 @@ export default function Home() {
     return(
         <View style={styles.container}>
             <Text>Home</Text>
-            <Button title="Sair" onPress={() => signOut()} />
         </View>
     );
 }

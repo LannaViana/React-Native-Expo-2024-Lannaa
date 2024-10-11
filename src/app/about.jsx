@@ -6,7 +6,7 @@ export default function About() {
     return (
         <View style={styles.container}>
             <Text>Sobre</Text> 
-            <Button title="Voltar" onPress={() => {router.replace("/")}} />
+            <Button title="Voltar" onPress={() => {router.replace("signin")}} />
         </View>
     );
 }

@@ -3,20 +3,31 @@ import { Drawer } from 'expo-router/drawer';
 import { Button, Text, TouchableOpacity, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons"
 import { DrawerContentScrollView, DrawerItemList } from "@react-navigation/drawer";
+import { useAuth } from "../../hooks/Auth/index";
 
 function CustomDrawerContent(props) {
+    const { user, signOut } = useAuth();
+
     return (
     <View style={{ flex: 1 }}>
+        <View style={{ marginTop: 20 }}>
+            <Text style={{ textAlign: "center", fontSize: 16, fontFamily: "regular" }}> 
+                {user.user.nome}
+            </Text>
+        </View>
         <DrawerContentScrollView {...props}>
             <DrawerItemList {...props} />
         </DrawerContentScrollView>
-        <TouchableOpacity 
+        <TouchableOpacity onPress={()=>signOut()}
         style={{
-            width: '100%',
             justifyContent: 'center',
             alignItems: 'center',
+            height: 50,
+            margin: 10,
+            backgroundColor: 'blue',
+            borderRadius: 5,
         }}>
-            <Text>Deslogar</Text>
+            <Text style={{ color: "white", fontFamily: "bold" }}>Deslogar</Text>
         </TouchableOpacity>
     </View>
     )
