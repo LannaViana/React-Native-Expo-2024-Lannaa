@@ -1,6 +1,6 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Drawer } from 'expo-router/drawer';
-import { Button, Text, TouchableOpacity, View } from "react-native";
+import { Button, Image, Text, TouchableOpacity, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons"
 import { DrawerContentScrollView, DrawerItemList } from "@react-navigation/drawer";
 import { useAuth } from "../../hooks/Auth/index";
@@ -11,8 +11,14 @@ function CustomDrawerContent(props) {
     return (
     <View style={{ flex: 1 }}>
         <View style={{ marginTop: 20 }}>
-            <Text style={{ textAlign: "center", fontSize: 16, fontFamily: "regular" }}> 
-                {user.user.nome}
+            <Image
+              source={{ 
+                uri: "https://www.github.com/LannaViana.png",
+              }}
+              style={{ width: 100, height: 100, borderRadius: 50, left: 90, marginTop: 20 }}
+             />
+            <Text style={{ textAlign: "center", fontSize: 16, fontFamily: "regular", marginTop: 10 }}> 
+                {user?.user?.nome}
             </Text>
         </View>
         <DrawerContentScrollView {...props}>
