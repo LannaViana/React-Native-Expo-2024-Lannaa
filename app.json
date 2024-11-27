@@ -1,28 +1,27 @@
 {
   "expo": {
-    "name": "React-Native-Expo-2024-Lannaa",
-    "slug": "React-Native-Expo-2024-Lannaa",
-    "scheme": "React-Native-Expo-2024-Lannaa",
+    "name": "react-native-expo-neurfa",
+    "slug": "react-native-expo-neurfa",
+    "scheme": "react-native-expo-neurfa",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/esculpit.png",
+    "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/esculpit2.png",
+      "image": "./src/assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#f5ca84"
+      "backgroundColor": "#ffffff",
+      "jsEngine": "jsc"
+
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/esculpit.png",
-        "backgroundColor": "#f5ca84"
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
       }
-    },
-    "web": {
-      "favicon": "./src/assets/esculpit.png"
     },
     "plugins": [
       "expo-router",
